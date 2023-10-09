@@ -8,13 +8,12 @@ $total_tributario = 0;
 $total_dp = 0;
 $personalizar = false;
 $compraeVendaFora = $_POST["compraeVendaForaEscolhido"];
-
 /**die();*/
 if (!empty($_POST["tributoEscolhido_contabil"]) && !empty($_POST["tributoEscolhido_contabil"])) {
 
   //Contabilidade
     switch ($_POST["tributoEscolhido_contabil"]) {
-    case "Simples Nacional":
+    case "Simples Nacional/Demais":
 
     $servico            = 50;
     $comercio           = 80;
@@ -262,14 +261,15 @@ if (!empty($_POST["tributoEscolhido_contabil"]) && !empty($_POST["tributoEscolhi
     }
     break;
   }
-    $total_contabilidade = $total+$total*0.3642;
+    $total_contabilidade = $total+$total*0.3042;
 }
+
 //Tributario
 if (!empty($_POST["tributoEscolhido_tribut"]) && !empty($_POST["tributoEscolhido_tribut"])) {
 
   //Tributário
     switch ($_POST["tributoEscolhido_tribut"]) {
-    case "Simples Nacional":
+    case "Simples Nacional/Demais":
     $servico            = 50;
     $comercio           = 80;
     $industria          = 100;
@@ -503,7 +503,7 @@ if (!empty($_POST["tributoEscolhido_tribut"]) && !empty($_POST["tributoEscolhido
     }
     break;
   }
-    $total_tributario = $total+$total*0.38;
+    $total_tributario = $total+$total*0.32;
     $total_tributario = ($compraeVendaFora == "sim" or $compraeVendaFora == "Sim") ? $total_tributario+$total_tributario*0.3 : $total_tributario;
 }
 
@@ -586,7 +586,9 @@ if ($_POST["descricao_de_cargosetrabalhosEscolhido"] == "SIM") {
     $p = 400;
     $total = $total+$p;
 }
-$total_dp = $total*(18/100)+$total;
+$total_dp = $total*0.60;
+var_dump(total_dp);
+
 $total_backo = $total_contabilidade+$total_tributario+$total_dp;
 
 //$total_backo = ($compraeVendaFora == "sim" or $compraeVendaFora == "Sim") ? $total_backoffice+$total_backoffice*0.3 : $total_backoffice;
