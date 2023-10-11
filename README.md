@@ -10,3 +10,7 @@ Sistema de cálculo de backoffice Desenvolvido para a empresa CF Contabilidade.
  ## Link do Projeto 
 
  ## https://planilha.cffranquias.com.br/
+
+ ## Resumo do Projeto 
+
+ Esse sistema foi implementado com base na necessidade de mostrar para novos Franqueados como funciona o cálculo do backoffice, com isso, o franqueado terá a base dos cálculos de um cliente referente ao Contábil, Fiscal e Departamento Pessoal. 
